@@ -1,0 +1,18 @@
+No_,Name,City,County,Post_Code,Country_Region_Code,Customer_Posting_Group,Salesperson_Code,Segment
+CLI-001,Restaurante O Peirao,Vigo,Pontevedra,36201,ES,NACIONAL,VEN-001,RESTAURANTE
+CLI-002,Casa Solla,Poio,Pontevedra,36005,ES,NACIONAL,VEN-001,RESTAURANTE
+CLI-003,Restaurante A Centola,Cambados,Pontevedra,36630,ES,NACIONAL,VEN-002,RESTAURANTE
+CLI-004,O Fragón de Arousa,Vilagarcía,Pontevedra,36600,ES,NACIONAL,VEN-002,RESTAURANTE
+CLI-005,Taberna do Trasno,Pontevedra,Pontevedra,36001,ES,NACIONAL,VEN-001,RESTAURANTE
+CLI-006,Mesón A Mariña,Sanxenxo,Pontevedra,36960,ES,NACIONAL,VEN-002,RESTAURANTE
+CLI-007,Restaurante Pandemonium,Vigo,Pontevedra,36202,ES,NACIONAL,VEN-001,RESTAURANTE
+CLI-008,Vinoteca Gallaecia,Santiago de Compostela,A Coruña,15701,ES,NACIONAL,VEN-003,VINOTECA
+CLI-009,Adega Minho,Vigo,Pontevedra,36203,ES,NACIONAL,VEN-001,VINOTECA
+CLI-010,Cava do Salnés,Cambados,Pontevedra,36631,ES,NACIONAL,VEN-002,VINOTECA
+CLI-011,Viños da Ría,Pontevedra,Pontevedra,36002,ES,NACIONAL,VEN-001,VINOTECA
+CLI-012,O Mundo do Viño,Baiona,Pontevedra,36300,ES,NACIONAL,VEN-002,VINOTECA
+CLI-013,Gadis Vigo Centro,Vigo,Pontevedra,36204,ES,NACIONAL,VEN-003,SUPERMERCADO
+CLI-014,Froiz Pontevedra,Pontevedra,Pontevedra,36003,ES,NACIONAL,VEN-003,SUPERMERCADO
+CLI-015,Distribuciones Atlántico SL,Vilagarcía,Pontevedra,36601,ES,NACIONAL,VEN-003,SUPERMERCADO
+CLI-016,Eroski Sanxenxo,Sanxenxo,Pontevedra,36961,ES,NACIONAL,VEN-003,SUPERMERCADO
+CLI-017,Gadis Cambados,Cambados,Pontevedra,36632,ES,NACIONAL,VEN-003,SUPERMERCADO

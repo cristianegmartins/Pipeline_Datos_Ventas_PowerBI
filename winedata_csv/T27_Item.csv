@@ -1,0 +1,6 @@
+No_,Description,Item_Category_Code,Base_Unit_of_Measure,Unit_Price,Unit_Cost,Tipo_Vino,Subzona,Volumen_cl
+PROD-001,Seganfredo Atlántico,ALBARINO,BOT,12.5,5.8,Albariño joven,Val do Salnés,75
+PROD-002,Seganfredo Barrica,ALBARINO,BOT,19.9,9.2,Albariño crianza,Val do Salnés,75
+PROD-003,Seganfredo Escolha,ALBARINO,BOT,16.0,7.4,Albariño selección,O Rosal,75
+PROD-004,Seganfredo Condado,TREIXADURA,BOT,13.5,6.2,Treixadura joven,Condado do Tea,75
+PROD-005,Seganfredo Ribeira,TREIXADURA,BOT,15.0,6.9,Treixadura blend,Condado do Tea,75
