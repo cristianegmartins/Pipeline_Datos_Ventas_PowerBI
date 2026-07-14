@@ -89,5 +89,5 @@ Base de datos
 
 Autor: Cristiane G. Martins
 Analista de Datos | Business Inteligence 
-Proyecto académico y profesional para análisis de datos de venta de bodega
+Proyecto académico y profesional para análisis de datos de venta de bodega | Calificación 9,0 | Junio 2026
 DAW | CESUR
