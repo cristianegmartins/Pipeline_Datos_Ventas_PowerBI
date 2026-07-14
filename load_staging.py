@@ -23,8 +23,7 @@ DB_CONFIG = {
     "password": "WineData2024!",
 }
 
-# Carpeta donde están los CSV (usa la ruta completa si es necesario)
-# Ejemplo Windows: r"C:\Users\TuNombre\Desktop\winedata_csv"
+# Carpeta donde están los CSV
 CSV_FOLDER = r"C:\Winedata\winedata_csv"
 
 # Mapa: tabla staging → nombre del archivo CSV
