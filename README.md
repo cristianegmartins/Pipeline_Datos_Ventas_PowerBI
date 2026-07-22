@@ -1,10 +1,12 @@
-🍷 Proyecto WineData — ETL, Data Warehouse y Predicciones de Ventas
+Proyecto WineData
 
 Este proyecto implementa un flujo completo de creación de un Staging Area, ETL (Extracción, Transformación y Carga), 
 la creación de un Data Warehouse (DW) y un módulo de Machine Learning para generar predicciones basadas en datos de ventas 
 de una bodega ficticia, llamada SEGANFREDO.
 
-El objetivo es construir una arquitectura analítica que permita:
+Este proyecto fue desarrollado para mi FP en Desarrollo de Aplicaciones WEB - DAW, presentado en junio/2026.
+
+El objetivo fue construir una arquitectura analítica que permita:
 - Centralizar datos de ventas procedentes del ERP Microsoft Business Central.
 - Transformarlos y limpiarlos para análisis.
 - Crear un Data Warehouse optimizado.
