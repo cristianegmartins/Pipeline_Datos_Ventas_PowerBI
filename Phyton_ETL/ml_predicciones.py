@@ -6,6 +6,7 @@
 #              Guarda las predicciones en winedata_dw.
 # =============================================================
 
+import os
 import pandas as pd
 import mysql.connector
 from mysql.connector import Error
@@ -15,17 +16,33 @@ warnings.filterwarnings("ignore")
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, r2_score
 from datetime import datetime
+from dotenv import load_dotenv
 
 # -------------------------------------------------------------
 # CONFIGURACIÓN
 # -------------------------------------------------------------
+# Carga las variables definidas en el archivo .env (debe estar
+# en el mismo directorio que este script, o indicar la ruta con
+# load_dotenv("/ruta/al/.env"))
+load_dotenv()
+
 DW_CONFIG = {
-    "host":     "localhost",
-    "port":     3306,
-    "database": "winedata_dw",
-    "user":     "etl_user",
-    "password": "WineData2024!",
+    "host":     os.getenv("DW_HOST"),
+    "port":     int(os.getenv("DW_PORT", 3306)),
+    "database": os.getenv("DW_DATABASE"),
+    "user":     os.getenv("DW_USER"),
+    "password": os.getenv("DW_PASSWORD"),
 }
+
+# Verificación básica: si falta alguna variable, avisamos antes
+# de intentar conectar (evita errores confusos de mysql-connector)
+_faltantes = [k for k, v in DW_CONFIG.items() if v is None]
+if _faltantes:
+    raise EnvironmentError(
+        f"Faltan variables de entorno en el archivo .env: {_faltantes}. "
+        "Revisa que el archivo .env exista y contenga DW_HOST, DW_PORT, "
+        "DW_DATABASE, DW_USER y DW_PASSWORD."
+    )
 
 # -------------------------------------------------------------
 # 1. EXTRAER DATOS DEL DW
