@@ -1,95 +1,116 @@
-Proyecto WineData
+PROYECTO WINEDATA
 
-Este proyecto implementa un flujo completo de creación de un Staging Area, ETL (Extracción, Transformación y Carga), 
-la creación de un Data Warehouse (DW) y un módulo de Machine Learning para generar predicciones basadas en datos de ventas 
-de una bodega ficticia, llamada SEGANFREDO.
+WineData es un proyecto de analítica de datos end-to-end desarrollado como Proyecto Fin de Ciclo del Grado Superior en Desarrollo de Aplicaciones Web (DAW).
+Simula el sistema de inteligencia de negocio de una bodega gallega ficticia, cubriendo todo el pipeline de datos: desde la extracción de datos de venta de un ERP (Microsoft Business Central),
+pasando por un proceso ETL en Python, un Data Warehouse con arquitectura Star Schema en MySQL, hasta un dashboard interactivo en Power BI con predicciones de ventas mediante Machine Learning (Random Forest · scikit-learn). 
 
-Este proyecto fue desarrollado para mi FP en Desarrollo de Aplicaciones WEB - DAW, presentado en junio/2026.
+Proyecto presentado en mayo/2026 | Calificación: 90/100.
 
-El objetivo fue construir una arquitectura analítica que permita:
-- Centralizar datos de ventas procedentes del ERP Microsoft Business Central.
-- Transformarlos y limpiarlos para análisis.
-- Crear un Data Warehouse optimizado.
-- Generar predicciones mediante modelos de Machine Learning.
-- Visualizar resultados en herramientas como Power BI.
+---------------------------
+HERRAMIENTAS Y TECNOLOGÍAS
 
+· Python · pandas · scikit-learn 
+· MySQL · MariaDB · XAMPP
+· Power BI · Microsoft Fabric
+· ETL · Star Schema · Data Warehouse
+· Machine Learning · Random Forest
+· Git · GitHub · MySQL Workbench · VS Code
+· Scrum · Trello
 
----
-
- 🚀 1. Proceso ETL
+---------------------------
+PROCESO ETL
 
 El proceso ETL se divide en tres fases:
 
-🔹 Extracción
-Los datos se obtienen desde archivos CSV proporcionados por el ERP Microsoft Business Central, utilizado en la bodega.  
-El script `load_staging.py` carga estos datos en una base de datos temporal (staging).
+1. Extracción
+Los datos (ficticios) se obtienen desde archivos CSV proporcionados por el ERP Microsoft Business Central, seguindo el padrón del ERP (Datos primarios), utilizado en la bodega.
+El script (SQL_Base de datos/create_staging_tables.sql) carga estos datos en una base de datos temporal.
 
-🔹 Transformación
-El script `etl_winedata.py` realiza:
-- Limpieza de datos
-- Conversión de tipos
-- Normalización de campos
-- Unión entre tablas
-- Cálculo de métricas necesarias para el DW
+2. Transformación
+El script (Phyton_ETL/etl_winedata.py) realiza:
+· Limpieza de datos
+· Conversión de tipos
+· Normalización de campos
+· Unión entre tablas
+· Cálculo de métricas necesarias para el DW
 
-🔹 Carga
-Los datos transformados se insertan en las tablas del Data Warehouse.
+3. Carga
+Los datos transformados se insertan en las tablas del Data Warehouse (SQL_Base de datos/Create_dw_tables.sql).
 
----
-
-🏛️ 2. Data Warehouse (DW)
+---------------------------
+DATA WAREHOUSE (DW)
 
 El DW está diseñado siguiendo un enfoque **estrella (star schema)**, con:
 
-- **Tablas de hechos**: ventas, envíos, líneas de factura.
-- **Tablas de dimensiones**: clientes, productos, categorías, comerciales, fechas.
+· **Tablas de hechos**: ventas, envíos, líneas de factura.
+· **Tablas de dimensiones**: clientes, productos, categorías, comerciales, fechas.
 
 El script SQL principal incluye:
-- Creación de tablas
-- Relaciones
-- Índices
-- Inserción de datos transformados
+· Creación de tablas
+· Relaciones
+· Índices
+· Inserción de datos transformados
 
-🤖 3. Predicciones con Machine Learning
+---------------------------
+PREDICCIONES CON MACHINE LEARNING
 
-El archivo `ml_predicciones.py` implementa un modelo de predicción basado en scikit-learn.
+El archivo (Phyton_ETL/ml_predicciones.py) implementa un modelo de predicción basado en scikit-learn.
 
 Incluye:
-- Preparación del dataset
-- División train/test
-- Entrenamiento del modelo
-- Evaluación
-- Generación de predicciones finales
+· Preparación del dataset
+· División train/test
+· Entrenamiento del modelo
+· Evaluación
+· Generación de predicciones finales
 
 Las predicciones se integran posteriormente en Power BI para visualización.
 
-📊 4. Visualización en Power BI
+---------------------------
+VISUALIZACIÓN EN POWER BI
 
 El proyecto incluye capturas del dashboard final, donde se muestran:
-- Tendencias de ventas
-- Predicciones generadas por el modelo ML
-- Análisis por cliente, producto y categoría
+· Tendencias de ventas
+· Predicciones generadas por el modelo ML
+· Análisis por cliente, producto y categoría
 
----
-🛠️ 5. Requisitos
+Visualización del cuadro de mando: (Power BI_Cuadro de Mando/Winedata.pbix)
+
+---------------------------
+REQUISITOS
 
 Python
-- Python 3.10+
-- pandas
-- numpy
-- scikit-learn
-- sqlalchemy
-- mysql-connector-python (o el driver que uses)
+· Python 3.10+
+· pandas
+· numpy
+· scikit-learn
+· mysql-connector-python
 
 Base de datos
-- MySQL / MariaDB
-  
-6. Cómo ejecutar el proyecto
-1. Cargar datos en staging
-2. Ejecutar el ETL
-3. Entrenar y generar predicciones
+· MySQL / MariaDB
+· XAMPP (como servidor local)
+· MySQL Workbench (gestión visual)
 
-Autor: Cristiane G. Martins
-Analista de Datos | Business Inteligence 
-Proyecto académico y profesional para análisis de datos de venta de bodega | Calificación 9,0 | Junio 2026
-DAW | CESUR
+Conector
+·MySQL Connector/NET 8.0.28 (específico para compatibilidad con Power BI y MariaDB vía XAMPP)
+
+Visualización
+· Power BI Desktop
+· Microsoft Fabric (publicación del dashboard)
+
+Control de versiones
+· Git
+· GitHub
+
+Entorno de desarrollo
+· VS Code
+
+Gestión del proyecto
+· Trello
+
+---------------------------
+FLUJO DEL PROYECTO
+
+ERP (BC) → Staging Area → ETL → Data Warehouse → Machine Learning → Power BI / Intranet
+
+* El ML va después del Data Warehouse porque el modelo se alimenta de los datos ya limpios y transformados que están en winedata_dw.
+Las predicciones generadas se guardan de vuelta en el DW en la tabla predicciones_ventas, antes de llegar a Power BI.
