@@ -1,4 +1,4 @@
-PROYECTO WINEDATA ** prueba - [Script SQL](SQL/create_tables.sql)
+PROYECTO WINEDATA ** prueba - [Crear Data Warehouse](SQL_Base de datos/Create_dw_tables.sql)
 
 WineData es un proyecto de analítica de datos end-to-end desarrollado como Proyecto Fin de Ciclo del Grado Superior en Desarrollo de Aplicaciones Web (DAW).
 Simula el sistema de inteligencia de negocio de una bodega gallega ficticia, cubriendo todo el pipeline de datos: desde la extracción de datos de venta de un ERP (Microsoft Business Central),
