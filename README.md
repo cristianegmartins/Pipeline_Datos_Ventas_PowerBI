@@ -10,6 +10,7 @@ Proyecto presentado y aprobado en mayo/2026 | Calificación: 90/100.
 🎥 DEMO DEL CUADRO DE MANDO
  **Ver demostración en YouTube:** https://youtu.be/aZFsoygOcp0
 
+
 ---------------------------
 HERRAMIENTAS Y TECNOLOGÍAS
 
