@@ -7,7 +7,7 @@ pasando por un proceso ETL en Python, un Data Warehouse con arquitectura Star Sc
 
 Proyecto presentado y aprobado en mayo/2026 | Calificación: 90/100.
 
-## 🎥 Demo del Dashboard
+🎥 DEMO DEL CUADRO DE MANDO
  **Ver demostración en YouTube:** https://youtu.be/aZFsoygOcp0
 
 ---------------------------
