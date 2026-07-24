@@ -1,4 +1,4 @@
-PROYECTO WINEDATA
+PROYECTO WINEDATA ** prueba - [Dashboard Power BI](Dashboard/WineData.pbix)
 
 WineData es un proyecto de analítica de datos end-to-end desarrollado como Proyecto Fin de Ciclo del Grado Superior en Desarrollo de Aplicaciones Web (DAW).
 Simula el sistema de inteligencia de negocio de una bodega gallega ficticia, cubriendo todo el pipeline de datos: desde la extracción de datos de venta de un ERP (Microsoft Business Central),
@@ -28,11 +28,11 @@ El script (SQL_Base de datos/create_staging_tables.sql) carga estos datos en una
 
 2. Transformación
 El script (Phyton_ETL/etl_winedata.py) realiza:
-· Limpieza de datos
-· Conversión de tipos
-· Normalización de campos
-· Unión entre tablas
-· Cálculo de métricas necesarias para el DW
+· Limpieza de datos.
+· Conversión de tipos.
+· Normalización de campos.
+· Unión entre tablas.
+· Cálculo de métricas necesarias para el DW.
 
 3. Carga
 Los datos transformados se insertan en las tablas del Data Warehouse (SQL_Base de datos/Create_dw_tables.sql).
@@ -110,7 +110,7 @@ Gestión del proyecto
 ---------------------------
 FLUJO DEL PROYECTO
 
-ERP (BC) → Staging Area → ETL → Data Warehouse → Machine Learning → Power BI / Intranet
+ERP (BC) → Staging Area → ETL → Data Warehouse → Machine Learning → Power BI 
 
 * El ML va después del Data Warehouse porque el modelo se alimenta de los datos ya limpios y transformados que están en winedata_dw.
 Las predicciones generadas se guardan de vuelta en el DW en la tabla predicciones_ventas, antes de llegar a Power BI.
