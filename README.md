@@ -1,10 +1,11 @@
-PROYECTO WINEDATA ** prueba - [Crear Data Warehouse](SQL_Base de datos/Create_dw_tables.sql)
+PROYECTO WINEDATA
 
 WineData es un proyecto de analítica de datos end-to-end desarrollado como Proyecto Fin de Ciclo del Grado Superior en Desarrollo de Aplicaciones Web (DAW).
 Simula el sistema de inteligencia de negocio de una bodega gallega ficticia, cubriendo todo el pipeline de datos: desde la extracción de datos de venta de un ERP (Microsoft Business Central),
-pasando por un proceso ETL en Python, un Data Warehouse con arquitectura Star Schema en MySQL, hasta un dashboard interactivo en Power BI con predicciones de ventas mediante Machine Learning (Random Forest · scikit-learn). 
+pasando por un proceso ETL en Python, un Data Warehouse con arquitectura Star Schema en MySQL, hasta un dashboard interactivo en Power BI con predicciones de ventas mediante Machine Learning 
+(Random Forest · scikit-learn). 
 
-Proyecto presentado en mayo/2026 | Calificación: 90/100.
+Proyecto presentado y aprobado en mayo/2026 | Calificación: 90/100.
 
 ---------------------------
 HERRAMIENTAS Y TECNOLOGÍAS
@@ -19,42 +20,42 @@ HERRAMIENTAS Y TECNOLOGÍAS
 
 ---------------------------
 PROCESO ETL
-
-El proceso ETL se divide en tres fases:
-
+Scripts de preparación 
+- `create_staging_tables.sql`: crea las tablas de staging en MySQL.
+- `create_dw_tables.sql`: crea el esquema del Data Warehouse en estrella.
+  
 1. Extracción
-Los datos (ficticios) se obtienen desde archivos CSV proporcionados por el ERP Microsoft Business Central, seguindo el padrón del ERP (Datos primarios), utilizado en la bodega.
-El script (SQL_Base de datos/create_staging_tables.sql) carga estos datos en una base de datos temporal.
+- `load_staging.py`: carga los archivos CSV — que simulan el export del ERP Microsoft Business Central — en las tablas de staging, sin ninguna transformación.
 
-2. Transformación
-El script (Phyton_ETL/etl_winedata.py) realiza:
-· Limpieza de datos.
-· Conversión de tipos.
-· Normalización de campos.
-· Unión entre tablas.
-· Cálculo de métricas necesarias para el DW.
+2. Transformación y carga:
+- `etl_winedata.py`: lee los datos crudos de staging, aplica limpieza y normalización, calcula métricas de negocio (margen, coste, rentabilidad) y carga los datos transformados en las tablas dimensionales y de hechos del Data Warehouse.
 
-3. Carga
-Los datos transformados se insertan en las tablas del Data Warehouse (SQL_Base de datos/Create_dw_tables.sql).
+Alternativa de conexión Power BI:
+- `export_dw_to_csv.py`: exporta las 5 tablas del DW a CSV cuando la conexión directa MySQL no está disponible.
+
 
 ---------------------------
 DATA WAREHOUSE (DW)
 
-El DW está diseñado siguiendo un enfoque **estrella (star schema)**, con:
+- `create_dw_tables.sql`: crea la estructura del Data Warehouse  — base de datos, tablas, relaciones e índices.
 
-· **Tablas de hechos**: ventas, envíos, líneas de factura.
-· **Tablas de dimensiones**: clientes, productos, categorías, comerciales, fechas.
+El DW está diseñado siguiendo un modelo en estrella (star schema):
+· Tabla de hechos: hechos_ventas
+· Tablas de dimensiones: dim_cliente, dim_producto, dim_vendedor, dim_calendario
 
-El script SQL principal incluye:
-· Creación de tablas
-· Relaciones
-· Índices
-· Inserción de datos transformados
+El script SQL incluye:
+· Creación de la base de datos winedata_dw
+· Creación de tablas con tipos de datos correctos
+· Foreign keys entre hechos y dimensiones
+· Índices para optimizar las consultas de Power BI
 
 ---------------------------
 PREDICCIONES CON MACHINE LEARNING
 
-El archivo (Phyton_ETL/ml_predicciones.py) implementa un modelo de predicción basado en scikit-learn.
+- `ml_predicciones.py`: El script implementa un modelo de predicción basado en scikit-learn.
+
+· Modelo: Random Forest Regressor
+· Entrenamiento: 2022-2024 · Validación: 2025
 
 Incluye:
 · Preparación del dataset
@@ -73,9 +74,6 @@ El proyecto incluye capturas del dashboard final, donde se muestran:
 · Predicciones generadas por el modelo ML
 · Análisis por cliente, producto y categoría
 
-Visualización del cuadro de mando: (Power BI_Cuadro de Mando/Winedata.pbix)
-
----------------------------
 REQUISITOS
 
 Python
@@ -91,7 +89,7 @@ Base de datos
 · MySQL Workbench (gestión visual)
 
 Conector
-·MySQL Connector/NET 8.0.28 (específico para compatibilidad con Power BI y MariaDB vía XAMPP)
+· MySQL Connector/NET 8.0.28 (específico para compatibilidad con Power BI y MariaDB vía XAMPP)
 
 Visualización
 · Power BI Desktop
