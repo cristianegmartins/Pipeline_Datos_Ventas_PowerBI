@@ -1,12 +1,13 @@
 PROYECTO WINEDATA
 
-WineData es un proyecto de analítica de datos end-to-end desarrollado como Proyecto Fin de Ciclo del Grado Superior en Desarrollo de Aplicaciones Web (DAW).
-Simula el sistema de inteligencia de negocio de una bodega gallega ficticia, cubriendo todo el pipeline de datos: desde la extracción de datos de venta de un ERP (Microsoft Business Central),
-pasando por un proceso ETL en Python, un Data Warehouse con arquitectura Star Schema en MySQL, hasta un dashboard interactivo en Power BI con predicciones de ventas mediante Machine Learning 
-(Random Forest · scikit-learn). 
+Proyecto de datos end-to-end desarrollado como Proyecto Fin de Ciclo del Grado Superior en Desarrollo de Aplicaciones Web (DAW).
+WineData simula el ecosistema de datos de una bodega gallega, cubriendo todo el ciclo de vida de la información: extracción de datos de un ERP, procesos ETL, diseño de un Data Warehouse, modelado dimensional, análisis de datos y visualización en Power BI.
+
+El proyecto incluye un proceso completo de integración, transformación y explotación de datos orientado a la toma de decisiones empresariales.
+
+El objetivo del proyecto es transformar datos operacionales en información analítica que permita evaluar el rendimiento comercial de la bodega y apoyar la toma de decisiones basada en datos.
 
 Proyecto presentado y aprobado en mayo/2026 | Calificación: 90/100.
-
 🎥 Haz clic en la imagen para ver la demostración del dashboard en YouTube.
 
 [![WineData Dashboard](Dashboard_winedata.JPG)](https://youtu.be/aZFsoygOcp0)
@@ -14,34 +15,87 @@ Proyecto presentado y aprobado en mayo/2026 | Calificación: 90/100.
 ---------------------------
 HERRAMIENTAS Y TECNOLOGÍAS
 
-· Python · pandas · scikit-learn 
-· MySQL · MariaDB · XAMPP
-· Power BI · Microsoft Fabric
-· ETL · Star Schema · Data Warehouse
-· Machine Learning · Random Forest
-· Git · GitHub · MySQL Workbench · VS Code
-· Scrum · Trello
+### Datos y Bases de Datos
+· MySQL
+· MariaDB
+· SQL
+· MySQL Workbench
+ 
+### ETL e Integración
+· Python
+· Pandas
+ 
+### Data Warehouse
+· Star Schema
+· Modelado dimensional
+ 
+### Analítica y Visualización
+· Power BI
+· Microsoft Fabric
+ 
+### Machine Learning
+· Scikit-learn
+· Random Forest
+ 
+### Desarrollo y Gestión
+· Git
+· GitHub
+· VS Code
+· Scrum
+· Trello
+
+
+---------------------------
+## Competencias desarrolladas
+
+· Diseño de Data Warehouse (Star Schema)
+· Procesos ETL
+· Modelado dimensional
+· Integración de datos
+· SQL y bases de datos relacionales
+· Limpieza y transformación de datos
+· Análisis de datos
+· Visualización de KPIs
+· Machine Learning aplicado a negocio
+· Gestión de proyectos con Git y Scrum
+
+
+---------------------------
+## Arquitectura de la solución
+
+Microsoft Dynamics 365 Business Central
+            ↓
+       Staging Area
+            ↓
+          ETL
+            ↓
+     Data Warehouse
+            ↓
+    Machine Learning
+            ↓
+        Power BI
+
 
 ---------------------------
 PROCESO ETL
 Scripts de preparación 
-- `create_staging_tables.sql`: crea las tablas de staging en MySQL.
-- `create_dw_tables.sql`: crea el esquema del Data Warehouse en estrella.
+· `create_staging_tables.sql`: crea las tablas de staging en MySQL.
+· `create_dw_tables.sql`: crea el esquema del Data Warehouse en estrella.
   
 1. Extracción
-- `load_staging.py`: carga los archivos CSV — que simulan el export del ERP Microsoft Business Central — en las tablas de staging, sin ninguna transformación.
+· `load_staging.py`: carga los archivos CSV — que simulan el export del ERP Microsoft Business Central — en las tablas de staging, sin ninguna transformación.
 
 2. Transformación y carga:
-- `etl_winedata.py`: lee los datos crudos de staging, aplica limpieza y normalización, calcula métricas de negocio (margen, coste, rentabilidad) y carga los datos transformados en las tablas dimensionales y de hechos del Data Warehouse.
+· `etl_winedata.py`: lee los datos crudos de staging, aplica limpieza y normalización, calcula métricas de negocio (margen, coste, rentabilidad) y carga los datos transformados en las tablas dimensionales y de hechos del Data Warehouse.
 
 Alternativa de conexión Power BI:
-- `export_dw_to_csv.py`: exporta las 5 tablas del DW a CSV cuando la conexión directa MySQL no está disponible.
+· `export_dw_to_csv.py`: exporta las 5 tablas del DW a CSV cuando la conexión directa MySQL no está disponible.
 
 
 ---------------------------
 DATA WAREHOUSE (DW)
 
-- `create_dw_tables.sql`: crea la estructura del Data Warehouse  — base de datos, tablas, relaciones e índices.
+· `create_dw_tables.sql`: crea la estructura del Data Warehouse  — base de datos, tablas, relaciones e índices.
 
 El DW está diseñado siguiendo un modelo en estrella (star schema):
 · Tabla de hechos: hechos_ventas
@@ -71,7 +125,7 @@ Incluye:
 Las predicciones se integran posteriormente en Power BI para visualización.
 
 ---------------------------
-VISUALIZACIÓN EN POWER BI
+ANÁLISIS Y VISUALIZACIÓN DE DATOS
 
 El proyecto incluye capturas del dashboard final, donde se muestran:
 · Tendencias de ventas
