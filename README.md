@@ -12,30 +12,25 @@ Proyecto presentado y aprobado en mayo/2026 | Calificación: 90/100.
 
 [![WineData Dashboard](Dashboard_winedata.JPG)](https://youtu.be/aZFsoygOcp0)
 
-## HERRAMIENTAS Y TECNOLOGÍAS
+### HERRAMIENTAS Y TECNOLOGÍAS
 
 ### Datos y Bases de Datos   
 · MySQL    
 · MariaDB    
 · SQL    
 · MySQL Workbench     
- 
 ### ETL e Integración  
 · Python   
 · Pandas   
- 
 ### Data Warehouse   
 · Star Schema   
 · Modelado dimensional   
- 
 ### Analítica y Visualización  
 · Power BI   
 · Microsoft Fabric   
- 
 ### Machine Learning  
 · Scikit-learn   
 · Random Forest   
- 
 ### Desarrollo y Gestión  
 · Git   
 · GitHub   
@@ -58,19 +53,19 @@ Proyecto presentado y aprobado en mayo/2026 | Calificación: 90/100.
 
 ## Arquitectura de la solución   
 
-Microsoft Dynamics 365 Business Central  
-            ↓
-       Staging Area
-            ↓
-          ETL
-            ↓
-     Data Warehouse
-            ↓
-    Machine Learning
-            ↓
-        Power BI
+Microsoft Dynamics 365 Business Central   
+            ↓  
+       Staging Area  
+            ↓  
+          ETL  
+            ↓  
+     Data Warehouse  
+            ↓  
+    Machine Learning  
+            ↓  
+        Power BI  
 
-## PROCESO ETL  
+### PROCESO ETL  
 Scripts de preparación  
 · `create_staging_tables.sql`: crea las tablas de staging en MySQL.  
 · `create_dw_tables.sql`: crea el esquema del Data Warehouse en estrella.  
@@ -84,7 +79,7 @@ Scripts de preparación
 Alternativa de conexión Power BI:  
 · `export_dw_to_csv.py`: exporta las 5 tablas del DW a CSV cuando la conexión directa MySQL no está disponible.  
 
-## DATA WAREHOUSE (DW)    
+### DATA WAREHOUSE (DW)    
 
 · `create_dw_tables.sql`: crea la estructura del Data Warehouse  — base de datos, tablas, relaciones e índices.  
 
@@ -114,45 +109,45 @@ Incluye:
 
 Las predicciones se integran posteriormente en Power BI para visualización.   
 
-## ANÁLISIS Y VISUALIZACIÓN DE DATOS    
+### ANÁLISIS Y VISUALIZACIÓN DE DATOS    
 
 El proyecto incluye capturas del dashboard final, donde se muestran:   
 · Tendencias de ventas  
 · Predicciones generadas por el modelo ML  
 · Análisis por cliente, producto y categoría  
 
-## REQUISITOS   
+### REQUISITOS   
 
-# Python  
+### Python  
 · Python 3.10+  
 · pandas  
 · numpy  
 · scikit-learn  
 · mysql-connector-python  
 
-# Base de datos  
+### Base de datos  
 · MySQL / MariaDB  
 · XAMPP (como servidor local)  
 · MySQL Workbench (gestión visual)  
 
-# Conector  
+### Conector  
 · MySQL Connector/NET 8.0.28 (específico para compatibilidad con Power BI y MariaDB vía XAMPP)  
 
-# Visualización  
+### Visualización  
 · Power BI Desktop  
 · Microsoft Fabric (publicación del dashboard)  
 
-# Control de versiones  
+### Control de versiones  
 · Git   
 · GitHub  
 
-# Entorno de desarrollo  
+### Entorno de desarrollo  
 · VS Code  
 
-# Gestión del proyecto  
+### Gestión del proyecto  
 · Trello  
 
-## FLUJO DEL PROYECTO    
+### FLUJO DEL PROYECTO    
 
 ERP (BC) → Staging Area → ETL → Data Warehouse → Machine Learning → Power BI   
 
